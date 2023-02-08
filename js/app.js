@@ -68,8 +68,10 @@ console.log(sommaTotale)
 function dispariPari(totale){
     if (sommaTotale % 2===0 ){
         sommaTotale='e pari'
+        console.log('HAI VINTO')
     }else{
         sommaTotale='e dispari'
+        console.log('HAI PERSO')
     }
 
 

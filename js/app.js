@@ -1,12 +1,12 @@
 // ESERCIZIO PAROLE PALIDROME
 // CHIEDI UNA PAROLA ALL'UTENTE
- let chiediParola = prompt('inserisci una parola');
+let chiediParola = prompt('inserisci una parola');
 
 // INVOCAZIONE LA FUNZIONE
-const evoPalidrome = palidrome(chiediParola) ;
+const evoPalidrome = palidrome(chiediParola);
 
 // STAMPO SE E TRUE E FALSO
- console.log(palidrome(chiediParola));
+console.log(palidrome(chiediParola));
 
 // FUNZIONE    
 function palidrome(parola) {
@@ -37,10 +37,11 @@ function palidrome(parola) {
 // LA FUNZIONE GENERA UN NUMERO DA 1 A 5 
 // LA FUNZIONE SOMMA prompt E IL NUMERO RANDOMICO GENERATO DALLA FUNZIONE
 // CHIEDO IL NUMERO DA 1 A 5
-let  utenteSeglieNum = parseInt(prompt('Scegli un numero da uno 1 a 5 '))
- console.log(utenteSeglieNum)
-// USANDO IL CICLO WHILE CHIEDO UN NUMERO DA 1 A 5
-while(utenteSeglieNum===0||utenteSeglieNum>5){
+// USANDO IL CICLO WHILE E UN PROMPT CHIEDO UN NUMERO DA 1 A 5
+let utenteSeglieNum = parseInt(prompt('Scegli un numero da uno 1 a 5 '))
+console.log(utenteSeglieNum)
+
+while (utenteSeglieNum === 0 || utenteSeglieNum > 5) {
     utenteSeglieNum = parseInt(prompt('Scegli un numero da uno 1 a 5 '))
 }
 // INVOCO LA FUNZIONE 
@@ -48,32 +49,34 @@ let generatore = generatoreRandom(Number)
 console.log(generatore)
 
 // INVOCO LA FUNZIONE
-let sommaTotale = sommaNumeriUtentePc(generatore,utenteSeglieNum)
+let sommaTotale = sommaNumeriUtentePc(generatore, utenteSeglieNum)
 console.log(sommaTotale)
+
 // INVOCO LA FUNZIONE
 let totDispariPari = dispariPari(sommaTotale)
 console.log(sommaTotale)
+
 // GENERO CON LA FUNZIONE IL NUMERO RANDOM
-function generatoreRandom(x){
-    const gene = Math.floor(Math.random() * 5)+1;
+function generatoreRandom(x) {
+    const gene = Math.floor(Math.random() * 5) + 1;
     return gene
 }
 
 // GENERO  LA SOMMA CON LA FUNZIONE
-function sommaNumeriUtentePc(numeroscelto,numerorandom){
+function sommaNumeriUtentePc(numeroscelto, numerorandom) {
     const somma = numeroscelto + numerorandom
     return somma
 }
 // GENERO  SE LA SOMMA E PARI O DISPARI
-function dispariPari(totale){
-    if (sommaTotale % 2===0 ){
-        sommaTotale='e pari'
+function dispariPari(totale) {
+    if (sommaTotale % 2 === 0) {
+        sommaTotale = 'e pari'
         console.log('HAI VINTO')
-    }else{
-        sommaTotale='e dispari'
+    } else {
+        sommaTotale = 'e dispari'
         console.log('HAI PERSO')
     }
 
 
-    
+
 }

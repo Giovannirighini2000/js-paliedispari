@@ -43,14 +43,16 @@ let  utenteSeglieNum = parseInt(prompt('Scegli un numero da uno 1 a 5 '))
 while(utenteSeglieNum===0||utenteSeglieNum>5){
     utenteSeglieNum = parseInt(prompt('Scegli un numero da uno 1 a 5 '))
 }
-// INVOCO LA FUNZIONE
+// INVOCO LA FUNZIONE 
 let generatore = generatoreRandom(Number)
 console.log(generatore)
 
 // INVOCO LA FUNZIONE
 let sommaTotale = sommaNumeriUtentePc(generatore,utenteSeglieNum)
 console.log(sommaTotale)
-
+// INVOCO LA FUNZIONE
+let totDispariPari = dispariPari(sommaTotale)
+console.log(sommaTotale)
 // GENERO CON LA FUNZIONE IL NUMERO RANDOM
 function generatoreRandom(x){
     const gene = Math.floor(Math.random() * 5)+1;
@@ -62,8 +64,6 @@ function sommaNumeriUtentePc(numeroscelto,numerorandom){
     const somma = numeroscelto + numerorandom
     return somma
 }
-let totDispariPari = dispariPari(sommaTotale)
-console.log(sommaTotale)
 // GENERO  SE LA SOMMA E PARI O DISPARI
 function dispariPari(totale){
     if (sommaTotale % 2===0 ){

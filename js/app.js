@@ -1,6 +1,6 @@
 // ESERCIZIO PAROLE PALIDROME
 // CHIEDI UNA PAROLA ALL'UTENTE
-let chiediParola = prompt('inserisci una parola');
+ let chiediParola = prompt('inserisci una parola');
 
 // INVOCAZIONE LA FUNZIONE
 const evoPalidrome = palidrome(chiediParola) ;
@@ -29,4 +29,36 @@ function palidrome(parola) {
     let inverti = fine.split('').reverse().join('');
     // VERIFICHIAMO LA CORRISPONDEZA DELL'INIZIO E DELLA FINE COSI DA OTTENERE SE  E PALIDROME
     return (inizio === inverti)
+}
+
+
+// ESERCIZIO PARI O DISPARI
+// UTENTE INSERISCE UN NUMERO DA 1 A 5
+// LA FUNZIONE GENERA UN NUMERO DA 1 A 5 
+// LA FUNZIONE SOMMA prompt E IL NUMERO RANDOMICO GENERATO DALLA FUNZIONE
+// CHIEDO IL NUMERO DA 1 A 5
+let  utenteSeglieNum = parseInt(prompt('Scegli un numero da uno 1 a 5 '))
+ console.log(utenteSeglieNum)
+// USANDO IL CICLO WHILE CHIEDO UN NUMERO DA 1 A 5
+while(utenteSeglieNum===0||utenteSeglieNum>5){
+    utenteSeglieNum = parseInt(prompt('Scegli un numero da uno 1 a 5 '))
+}
+// INVOCO LA FUNZIONE
+let generatore = generatoreRandom(Number)
+console.log(generatore)
+
+// INVOCO LA FUNZIONE
+let sommaTotale = sommaNumeriUtentePc(generatore,utenteSeglieNum)
+console.log(sommaTotale)
+
+// GENERO CON LA FUNZIONE IL NUMERO RANDOM
+function generatoreRandom(x){
+    const gene = Math.floor(Math.random() * 5)+1;
+    return gene
+}
+
+// GENERO  LA SOMMA CON LA FUNZIONE
+function sommaNumeriUtentePc(numeroscelto,numerorandom){
+    const somma = numeroscelto + numerorandom
+    return somma
 }

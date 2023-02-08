@@ -62,3 +62,16 @@ function sommaNumeriUtentePc(numeroscelto,numerorandom){
     const somma = numeroscelto + numerorandom
     return somma
 }
+let totDispariPari = dispariPari(sommaTotale)
+console.log(sommaTotale)
+// GENERO  SE LA SOMMA E PARI O DISPARI
+function dispariPari(totale){
+    if (sommaTotale % 2===0 ){
+        sommaTotale='e pari'
+    }else{
+        sommaTotale='e dispari'
+    }
+
+
+    
+}

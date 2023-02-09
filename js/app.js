@@ -33,13 +33,22 @@ function palidrome(parola) {
 
 
 // ESERCIZIO PAROLE PARI O DISPARI 
+// USIAMO IL CICLO DO WHILE PER STABILIRE COSA SCEGLIE UTENTE SE PARI O DISPARIS
+let utenteSceltaPariDispari
+
+do {
+    utenteSceltaPariDispari = prompt('Scrivi pari o dispari')
+} while (utenteSceltaPariDispari !== 'pari' && utenteSceltaPariDispari !== 'dispari')
+console.log(utenteSceltaPariDispari)
+
 // USANDO IL CICLO WHILE E UN PROMPT CHIEDO UN NUMERO DA 1 A 5
 let utenteSeglieNum = parseInt(prompt('Scegli un numero da uno 1 a 5 '))
 console.log(utenteSeglieNum)
 
-while (utenteSeglieNum === 0 || utenteSeglieNum > 5) {
+while (isNaN(utenteSeglieNum) || utenteSeglieNum === 0 || utenteSeglieNum > 5) {
     utenteSeglieNum = parseInt(prompt('Scegli un numero da uno 1 a 5 '))
 }
+
 // INVOCO LA FUNZIONE 
 let generatore = generatoreRandom(Number)
 console.log(generatore)
@@ -48,9 +57,15 @@ console.log(generatore)
 let sommaTotale = sommaNumeriUtentePc(generatore, utenteSeglieNum)
 console.log(sommaTotale)
 
-// INVOCO LA FUNZIONE
-let totDispariPari = dispariPari(sommaTotale)
-console.log(sommaTotale)
+
+// STABILISCO SE L'UTENTE VINCE O PERDE IN BASE ALLA SCELTA
+if (sommaTotale % 2 === 0 && utenteSceltaPariDispari === 'pari') {
+    console.log('HAI VINTO')
+} else if (sommaTotale % 2 === 1 && utenteSceltaPariDispari === 'dispari') {
+    console.log('HAI VINTO')
+} else {
+    console.log('HAI PERSO')
+}
 
 // GENERO CON LA FUNZIONE IL NUMERO RANDOM
 function generatoreRandom(x) {
@@ -63,16 +78,7 @@ function sommaNumeriUtentePc(numeroscelto, numerorandom) {
     const somma = numeroscelto + numerorandom
     return somma
 }
-// GENERO  SE LA SOMMA E PARI O DISPARI
-function dispariPari(totale) {
-    if (sommaTotale % 2 === 0) {
-        sommaTotale = 'e pari'
-        console.log('HAI VINTO')
-    } else {
-        sommaTotale = 'e dispari'
-        console.log('HAI PERSO')
-    }
 
 
 
-}
+
